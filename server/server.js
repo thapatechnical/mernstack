@@ -11,8 +11,17 @@ const errorMiddleware = require("./middlewares/error-middleware");
 
 // let's tackle cors
 const corsOptions = {
-  // origin: "http://localhost:4173",
-  origin: "http://thapatechnical.site",
+  // origin: "http://localhost:5173",
+  origin: (origin, callback) => {
+    // Check if the origin is allowed
+    const allowedOrigins = [
+      "http://localhost:5173",
+      "http://thapatechnical.site",
+      "http://www.thapatechnical.site",
+    ];
+    const isAllowed = allowedOrigins.includes(origin);
+    callback(null, isAllowed ? origin : false);
+  },
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };
