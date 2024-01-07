@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [services, setServices] = useState("");
   const authorizationToken = `Bearer ${token}`;
+
   const API = "http://api.thapatechnical.site";
   // const API = "http://localhost:5000";
 
