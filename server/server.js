@@ -11,7 +11,8 @@ const errorMiddleware = require("./middlewares/error-middleware");
 
 // let's tackle cors
 const corsOptions = {
-  origin: "http://localhost:4173",
+  // origin: "http://localhost:4173",
+  origin: "http://thapatechnical.site",
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };
