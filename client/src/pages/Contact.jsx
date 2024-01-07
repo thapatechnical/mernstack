@@ -12,7 +12,7 @@ export const Contact = () => {
 
   const [userData, setUserData] = useState(true);
 
-  const { user } = useAuth();
+  const { user, API } = useAuth();
 
   if (userData && user) {
     setContact({
@@ -40,16 +40,13 @@ export const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        "http://thapatechnical.site/api/form/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(contact),
-        }
-      );
+      const response = await fetch(`${API}/api/form/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contact),
+      });
 
       if (response.ok) {
         setContact(defaultContactFormData);

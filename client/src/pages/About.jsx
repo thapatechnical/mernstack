@@ -35,7 +35,7 @@ export const About = () => {
                 on the quality of our services.
               </p>
               <p>
-                Reliability: Count on us to be there when you need us. We're
+                Reliability: Count on us to be there when you need us. We are
                 committed to ensuring your IT environment is reliable and
                 available 24/7.
               </p>
