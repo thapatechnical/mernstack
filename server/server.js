@@ -16,9 +16,9 @@ const corsOptions = {
     // Check if the origin is allowed
     const allowedOrigins = [
       "http://localhost:5173",
-      // "http://localhost:4173",
-      // "http://thapatechnical.site",
-      // "http://www.thapatechnical.site",
+      "http://localhost:4173",
+      "http://thapatechnical.site",
+      "http://www.thapatechnical.site",
     ];
     const isAllowed = allowedOrigins.includes(origin);
     callback(null, isAllowed ? origin : false);
