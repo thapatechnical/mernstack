@@ -10,8 +10,9 @@ export const AuthProvider = ({ children }) => {
   const [services, setServices] = useState([]);
   const authorizationToken = `Bearer ${token}`;
 
-  const API = "https://api.thapatechnical.site";
   // const API = "http://localhost:5000";
+  // const API = "https://api.thapatechnical.site";
+  const API = import.meta.env.VITE_APP_URI_API;
 
   const storeTokenInLS = (serverToken) => {
     setToken(serverToken);
