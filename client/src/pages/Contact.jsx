@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../store/auth";
+import { useEffect } from "react";
 
 const defaultContactFormData = {
   username: "",
@@ -10,19 +11,18 @@ const defaultContactFormData = {
 export const Contact = () => {
   const [contact, setContact] = useState(defaultContactFormData);
 
-  const [userData, setUserData] = useState(true);
+  // const [userData, setUserData] = useState(true);
 
   const { user, API } = useAuth();
-
-  if (userData && user) {
-    setContact({
-      username: user.username,
-      email: user.email,
-      message: "",
-    });
-
-    setUserData(false);
-  }
+  useEffect(() => {
+    if (user) {
+      setContact({
+        username: user.username,
+        email: user.email,
+        message: "",
+      });
+    }
+  }, [user]);
 
   // lets tackle our handleInput
   const handleInput = (e) => {
